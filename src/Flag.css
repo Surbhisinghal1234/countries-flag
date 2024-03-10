@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to right, rgb(179, 128, 62), rgb(164, 50, 50));
+}
+.main {
+  height: 350px;
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;
+  display: flex;
+  margin: 3rem auto;
+  padding: 3rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+input {
+  padding: 5px 8px;
+  margin-right: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+button {
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: coral;
+  box-shadow: 2px 2px 2px black;
+  font-weight: bold;
+  color: #fff;
+  /* background: linear-gradient(to right, #c85a38, #c21010);
+  background-clip: text;
+  color: transparent; */
+}
+
