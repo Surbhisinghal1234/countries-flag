@@ -12,18 +12,20 @@ function Flag() {
       const response = await axios.get("https://flagcdn.com/en/codes.json");
       // const response = await axios.get("https://restcountries.com/v3.1/all");
       console.log(response);
-
       setCodes(response.data);
+      setCountry(
+        country.charAt(0).toUpperCase() + country.slice(1)
+      );
     }
     fetchData();
-  }, []);
+  }, [country]);
 
-  function modifyCountryName(name) {
-    const temp = name.split("");
-    const firstLetter = temp[0].toUpperCase();
-    temp.splice(0, 1, firstLetter);
-    setCountry(temp.join(""));
-  }
+  // function modifyCountryName(name) {
+  //   const temp = name.split("");
+  //   const firstLetter = temp[0].toUpperCase();
+  //   temp.splice(0, 1, firstLetter);
+  //   setCountry(temp.join(""));
+  // }
 
   function getFlag() {
     for (let x in codes) {
@@ -42,7 +44,14 @@ function Flag() {
             type="text"
             placeholder="Enter a country name"
             value={country}
-            onChange={(e) => modifyCountryName(e.target.value)}
+            onChange={
+              (e) => 
+              // modifyCountryName(e.target.value)
+              // setCountry(
+              //   e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
+              // )
+              setCountry(e.target.value)
+            }
           />
           <button onClick={getFlag}> Get Flag</button>
         </div>
